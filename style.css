@@ -1,0 +1,194 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    height: 850px;
+    color: hsl(232, 13%, 33%);
+    background-color: #edecfa;
+    background-image: url(./images/bg-top.svg), url(./images/bg-bottom.svg/);
+    background-repeat: no-repeat;
+    background-position: right top, left bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+header {
+    padding-top: 0px;
+}
+header h1 {
+    width: 100%;
+    text-align: center;
+}
+header div {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+.toggle-btn {
+    position: relative;
+    top: 15px;
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 30px;
+    margin: 0 25px;
+    background-color: hsl(237, 63%, 64%);
+    border: none;
+    border-radius: 17.5px;
+    font-size: 16px;
+    overflow: hidden;
+    transition: opacity 0.3s;
+}
+.toggle-btn:hover {
+    opacity: 0.5;
+}
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translate(-50%, -50%);
+    width: 23px;
+    height: 23px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.animate-right .circle {
+    animation: moveRight 0.3s linear forwards;
+}
+.animate-left .circle {
+    animation: moveLeft 0.3s linear backwards;
+}
+@keyframes moveRight {
+    0% {
+        left: 15px;
+    }
+    100% {
+        left: calc((100% - 15px));
+    }
+}
+@keyframes moveLeft {
+    0% {
+        left: calc((100% - 15px));
+    }
+    100% {
+        left: 15px;
+    }
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 50px;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px 30px 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 25%;
+}
+.basic {
+    box-shadow: 1px 0px 10px 0px hsl(230, 17%, 93%),
+        0px 1px 10px 0px hsl(230, 17%, 93%),
+        -1px 0px 10px 0px hsl(230, 17%, 93%),
+        0px -1px 10px 0px hsl(230, 17%, 93%);
+    height: 465px;
+}
+.pro {
+    box-shadow: 1px 0px 10px 0px hsl(230, 17%, 93%),
+        0px 1px 10px 0px hsl(230, 17%, 93%),
+        0 0 0 0,
+        0px -1px 10px 0px hsl(230, 17%, 93%);
+    background-color: hsl(237, 63%, 69%);
+    padding: 40px 30px 55px 30px;
+}
+.master {
+    box-shadow: 10px -10px 10px 0px hsl(230, 17%, 93%),
+        10px 10px 10px 0px hsl(230, 17%, 93%),
+        0px 0px 0px 0px,
+        10px 10px 10px 0px hsl(230, 17%, 93%);
+    height: 465px;
+}
+.pro {
+    color: #fff;
+}
+.pro .p-cont p {
+    border-color: #fff;
+}
+.pro button {
+    color: hsl(237, 63%, 64%);
+    background-image: none;
+    background-color: #fff;
+}
+[class|="price"] {
+    font-size: 55px;
+}
+[class|="price"]:nth-child(3) {
+    display: none;
+}
+section div span {
+    font-size: 30px;
+    position: relative;
+    bottom: 10px;
+    right: 5px;
+}
+.p-cont {
+    width: 100%;
+    padding: 30px 0 35px 0;
+    margin: 0;
+}
+section p {
+    border-top: 1px solid hsl(232, 13%, 33%);
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+section p:last-child {
+    border-bottom: 1px solid hsl(232, 13%, 33%);
+}
+section button {
+    color: #fff;
+    background-image: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+section:not(.pro) button:hover {
+    cursor: pointer;
+    color: hsl(237, 63%, 64%);
+    background-image: none;
+    background-color: #fff;
+    border: 1px solid hsl(237, 63%, 64%);
+    padding: 14px;
+}
+.pro button:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: hsl(237, 63%, 64%);
+    border: 1px solid #fff;
+    padding: 14px;
+}
+@media screen and (max-width: 480px) {
+    body {
+        height: 1800px;
+    }
+    main {
+        flex-direction: column;
+    }
+    section {
+        width: 80%;
+        margin: 15px 0;
+    }
+    .pro {
+        padding: 15px 30px 30px 30px;
+    }
+}
